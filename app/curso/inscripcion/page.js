@@ -62,7 +62,7 @@ const ScheduleBox = ({ className }) => (
       </li>
       <li>
         <strong>25 de noviembre de 2026 (9:00 am – 11:00 am | En línea)</strong><br/>
-        Sesión 2: Del sismo a la norma. La reconstrucción con bambú. Experiencias latinoamericanas en sismorresistencia, cuencas y ambiente <em>(retrasmisión del Webinar del 23 de septiembre)</em>.
+        Sesión 2: Del sismo a la norma. La reconstrucción con bambú. Experiencias latinoamericanas en sismorresistencia, cuencas y ambiente.
       </li>
       <li>
         <strong>02 de diciembre de 2026 (9:00 am – 11:00 am | En línea)</strong><br/>
@@ -77,7 +77,7 @@ const ScheduleBox = ({ className }) => (
       </li>
       <li>
         <strong>06 de enero de 2027 (9:00 am – 3:00 pm | En línea)</strong><br/>
-        Sesión 5: Taller de poda, mantenimiento y propagación de bambú <em>(se retrasmite la sesión grabada del Parque Arístides Rojas o la del Parque Miranda)</em>.
+        Sesión 5: Taller de poda, mantenimiento y propagación de bambú.
       </li>
       <li>
         <strong>13 de enero de 2027 (9:00 am – 3:00 pm | En línea)</strong><br/>
