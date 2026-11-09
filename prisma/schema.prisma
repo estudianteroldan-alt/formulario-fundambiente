@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model InscripcionCurso {
+  id               Int      @id @default(autoincrement())
+  nombre           String
+  apellido         String
+  cedula           String   @unique
+  genero           String?
+  edad             Int?
+  fechaNacimiento  String?
+  telefono         String
+  estado           String
+  municipio        String?
+  parroquia        String?
+  institucion      String
+  gradoAcademico   String?
+  rolDesempeno     String?
+  email            String
+  creadoEn         DateTime @default(now())
+}
+
+model InscripcionWebinar {
+  id               Int      @id @default(autoincrement())
+  nombre           String
+  apellido         String
+  cedula           String   @unique
+  genero           String?
+  edad             Int?
+  fechaNacimiento  String?
+  telefono         String
+  estado           String
+  municipio        String?
+  parroquia        String?
+  institucion      String
+  gradoAcademico   String?
+  rolDesempeno     String?
+  email            String
+  creadoEn         DateTime @default(now())
+}

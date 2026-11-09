@@ -1,0 +1,141 @@
+:root {
+  /* Paleta Principal (Naturaleza y Fondo) */
+  --color-mantis: #74C365;
+  --color-picture-book-green: #00804C;
+  --color-praxeti-white: #F6F7ED;
+  --color-first-spring: #DBE64C;
+
+  /* Paleta Secundaria (Agua y Contraste) */
+  --color-midnight-mirage: #001F3F;
+  --color-nuit-blanche: #1E488F;
+  --color-orange: #F9810D;
+  --color-dandelion: #FFB242;
+
+  /* Variables base */
+  --background: var(--color-praxeti-white);
+  --foreground: var(--color-midnight-mirage);
+  --primary: var(--color-picture-book-green);
+  --primary-hover: var(--color-mantis);
+  --accent: var(--color-first-spring);
+  --surface: rgba(255, 255, 255, 0.85); /* Glassmorphism base */
+  --surface-border: rgba(255, 255, 255, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--color-midnight-mirage);
+    --foreground: var(--color-praxeti-white);
+    --primary: var(--color-mantis);
+    --primary-hover: var(--color-first-spring);
+    --surface: rgba(0, 31, 63, 0.7);
+    --surface-border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  min-height: 100vh;
+  /* Fondo sutil tipo naturaleza se puede agregar aqui luego con un patron o degradado */
+  background-image: radial-gradient(circle at 100% 100%, rgba(116, 195, 101, 0.1) 0, transparent 50%), 
+                    radial-gradient(circle at 0% 0%, rgba(30, 72, 143, 0.05) 0, transparent 50%);
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Forms & Inputs */
+input, select, textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--foreground);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  input, select, textarea {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  option {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: transparent;
+  box-shadow: 0 0 0 3px rgba(116, 195, 101, 0.2);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--foreground);
+  font-size: 0.9rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 14px 0 rgba(0, 128, 76, 0.39);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 128, 76, 0.23);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Containers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.max-w-md {
+  max-width: 600px;
+}
