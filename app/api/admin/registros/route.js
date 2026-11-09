@@ -20,11 +20,8 @@ export async function GET(request) {
     return NextResponse.json({ registros })
   } catch (error) {
     console.error('Error obteniendo registros:', error)
-    const envStatus = process.env.DATABASE_URL 
-      ? `Present (starts with: ${process.env.DATABASE_URL.substring(0, 8)})` 
-      : 'NOT_FOUND_OR_EMPTY'
     return NextResponse.json(
-      { error: 'Hubo un error obteniendo los datos', details: error.message, envStatus },
+      { error: 'Hubo un error obteniendo los datos', details: error.message },
       { status: 500 }
     )
   }
