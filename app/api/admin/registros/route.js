@@ -21,7 +21,7 @@ export async function GET(request) {
   } catch (error) {
     console.error('Error obteniendo registros:', error)
     return NextResponse.json(
-      { error: 'Hubo un error obteniendo los datos' },
+      { error: 'Hubo un error obteniendo los datos', details: error.message },
       { status: 500 }
     )
   }

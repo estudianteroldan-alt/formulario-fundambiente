@@ -42,7 +42,7 @@ export async function POST(request) {
       )
     }
     return NextResponse.json(
-      { error: 'Hubo un error procesando el registro' },
+      { error: 'Hubo un error procesando el registro', details: error.message },
       { status: 500 }
     )
   }
