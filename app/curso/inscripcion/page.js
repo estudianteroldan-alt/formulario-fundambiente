@@ -147,7 +147,7 @@ export default function CursoInscripcion() {
         <div style={{ maxWidth: '600px', width: '100%', margin: '0 auto' }}>
           
           <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            <img src="/logo.png" alt="Fundambiente Logo" style={{ maxWidth: '250px', marginBottom: '1rem' }} />
+            <img src="/logo.png" alt="Fundambiente Logo" style={{ maxWidth: '280px', width: '100%', height: 'auto', marginBottom: '1.2rem' }} />
             <h1 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>Formulario de Inscripción</h1>
             <div style={{ fontSize: '0.9rem', opacity: 0.9, textAlign: 'justify', lineHeight: '1.5', marginTop: '1rem', padding: '0 1rem' }}>
               <p style={{ textAlign: 'center', marginBottom: '0.5rem', fontSize: '0.85rem', letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--accent)', fontWeight: 'bold' }}>
@@ -168,20 +168,6 @@ export default function CursoInscripcion() {
               <p style={{ marginBottom: '1rem', marginTop: '1rem' }}>
                 Capacitar a los participantes en la identificación, manejo sostenible y registro institucional de las especies de bambú en ABRAEs de Venezuela, integrando bases conceptuales en línea con una jornada de práctica de campo.
               </p>
-
-              <div style={{ background: 'rgba(0, 0, 0, 0.03)', padding: '1rem', borderRadius: '8px', borderLeft: '3px solid var(--primary)' }}>
-                <p style={{ fontWeight: 'bold', marginBottom: '0.5rem', color: 'var(--primary)' }}>
-                  Este curso va dirigido para:
-                </p>
-                <ul style={{ paddingLeft: '1.2rem', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.88rem' }}>
-                  <li>
-                    <strong>Personal del área de formación, viveros y forestal de:</strong> UTEC, Inparques, CONARE, ENAFOR, ONCC, IFLA, ICLAM, FUNPZZA, UPAFV, Fundambiente, Misión Árbol.
-                  </li>
-                  <li>
-                    <strong>Otras instituciones aliadas:</strong> VENETUR, MINCYT, MinVivid, Vivi Mincyt, Plan bambú Caracas.
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
 
