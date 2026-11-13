@@ -57,30 +57,30 @@ const ScheduleBox = ({ className }) => (
     </p>
     <ul style={{ listStyleType: 'none', padding: 0, margin: 0, fontSize: '0.82rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
       <li>
-        <strong>18 de noviembre de 2026 (9:00 am – 11:00 am | En línea)</strong><br/>
+        <strong>18 de noviembre de 2026 (9:00 am – 11:00 am | En línea)</strong><br />
         Sesión 1: Morfología y diversidad de especies.
       </li>
       <li>
-        <strong>25 de noviembre de 2026 (9:00 am – 11:00 am | En línea)</strong><br/>
+        <strong>25 de noviembre de 2026 (9:00 am – 11:00 am | En línea)</strong><br />
         Sesión 2: Del sismo a la norma. La reconstrucción con bambú. Experiencias latinoamericanas en sismorresistencia, cuencas y ambiente.
       </li>
       <li>
-        <strong>02 de diciembre de 2026 (9:00 am – 11:00 am | En línea)</strong><br/>
+        <strong>02 de diciembre de 2026 (9:00 am – 11:00 am | En línea)</strong><br />
         Sesión 3: Valor Ecológico y Gestión Sostenible.
       </li>
       <li>
-        <strong>09 de diciembre de 2026 (9:00 am – 11:00 am | En línea)</strong><br/>
+        <strong>09 de diciembre de 2026 (9:00 am – 11:00 am | En línea)</strong><br />
         Sesión 4: Inducción para registro de bambúes en Áreas Bajo Régimen de Administración Especial (ABRAE).
       </li>
       <li style={{ padding: '0.5rem 0.8rem', backgroundColor: 'rgba(0, 128, 76, 0.1)', borderRadius: '6px', borderLeft: '3px solid var(--primary)' }}>
         <strong>📅 ENTREGA DE FICHAS:</strong> Lunes 04 de enero de 2027
       </li>
       <li>
-        <strong>06 de enero de 2027 (9:00 am – 3:00 pm | En línea)</strong><br/>
+        <strong>06 de enero de 2027 (9:00 am – 3:00 pm | En línea)</strong><br />
         Sesión 5: Taller de poda, mantenimiento y propagación de bambú.
       </li>
       <li>
-        <strong>13 de enero de 2027 (9:00 am – 3:00 pm | En línea)</strong><br/>
+        <strong>13 de enero de 2027 (9:00 am – 3:00 pm | En línea)</strong><br />
         Sesión 6: Consolidación, resultados y cierre.
       </li>
     </ul>
@@ -92,7 +92,7 @@ const ScheduleBox = ({ className }) => (
 
 export default function CursoInscripcion() {
   const [formData, setFormData] = useState({
-    nombre: '', apellido: '', cedula: '', genero: '', edad: '', fechaNacimiento: '', 
+    nombre: '', apellido: '', cedula: '', genero: '', edad: '', fechaNacimiento: '',
     telefono: '', estado: '', municipio: '', parroquia: '',
     institucion: '', gradoAcademico: '', rolDesempeno: '', email: ''
   })
@@ -121,7 +121,7 @@ export default function CursoInscripcion() {
     e.preventDefault()
     setLoading(true)
     setMessage('')
-    
+
     try {
       const res = await fetch('/api/curso', {
         method: 'POST',
@@ -129,13 +129,13 @@ export default function CursoInscripcion() {
         body: JSON.stringify(formData)
       })
       const data = await res.json()
-      
+
       if (res.ok) {
         setShowSuccessModal(true)
-        setFormData({ 
-          nombre: '', apellido: '', cedula: '', genero: '', edad: '', fechaNacimiento: '', 
+        setFormData({
+          nombre: '', apellido: '', cedula: '', genero: '', edad: '', fechaNacimiento: '',
           telefono: '', estado: '', municipio: '', parroquia: '',
-          institucion: '', gradoAcademico: '', rolDesempeno: '', email: '' 
+          institucion: '', gradoAcademico: '', rolDesempeno: '', email: ''
         })
       } else {
         setMessage(data.error || 'Ocurrió un error al enviar.')
@@ -148,11 +148,11 @@ export default function CursoInscripcion() {
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh', width: '100%' }}>
-      
+
       {/* Columna Izquierda: Formulario */}
       <div className="form-column" style={{ flex: '1.2', display: 'flex', flexDirection: 'column', padding: '2rem 4rem', overflowY: 'auto' }}>
         <div style={{ maxWidth: '600px', width: '100%', margin: '0 auto' }}>
-          
+
           <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
             <img src="/logo.png" alt="Fundambiente Logo" style={{ maxWidth: '280px', width: '100%', height: 'auto', marginBottom: '1.2rem' }} />
             <h1 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>Formulario de Inscripción</h1>
@@ -180,11 +180,11 @@ export default function CursoInscripcion() {
 
           <div className="glass-panel" style={{ padding: '2.5rem' }}>
             {message && !showSuccessModal && (
-              <div style={{ 
-                padding: '1.5rem', 
-                backgroundColor: 'rgba(249, 129, 13, 0.2)', 
-                borderRadius: '12px', 
-                marginBottom: '1.5rem', 
+              <div style={{
+                padding: '1.5rem',
+                backgroundColor: 'rgba(249, 129, 13, 0.2)',
+                borderRadius: '12px',
+                marginBottom: '1.5rem',
                 textAlign: 'center',
                 fontWeight: 'bold'
               }}>
@@ -203,7 +203,7 @@ export default function CursoInscripcion() {
                   <input name="apellido" value={formData.apellido} onChange={handleChange} required />
                 </div>
               </div>
-              
+
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <div style={{ flex: '1 1 30%' }}>
                   <label>Cédula de Identidad</label>
@@ -303,9 +303,9 @@ export default function CursoInscripcion() {
               </button>
             </form>
           </div>
-          
+
           <ScheduleBox className="mobile-schedule" />
-          
+
         </div>
       </div>
 
@@ -325,11 +325,11 @@ export default function CursoInscripcion() {
             padding: '4rem 3rem',
             boxShadow: 'inset 120px -100px 150px -50px var(--background)'
           }}>
-            <div style={{ 
-              background: 'rgba(0, 31, 63, 0.75)', 
+            <div style={{
+              background: 'rgba(0, 31, 63, 0.75)',
               backdropFilter: 'blur(8px)',
-              padding: '1.5rem', 
-              borderRadius: '16px', 
+              padding: '1.5rem',
+              borderRadius: '16px',
               color: 'white',
               maxWidth: '60%',
               transform: currentSlide === idx ? 'translateY(0)' : 'translateY(20px)',
@@ -341,7 +341,7 @@ export default function CursoInscripcion() {
             </div>
           </div>
         ))}
-        
+
         <ScheduleBox className="desktop-schedule" />
       </div>
 
@@ -360,9 +360,9 @@ export default function CursoInscripcion() {
             <p style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>
               Tus datos han sido registrados correctamente. Para continuar y no perderte ninguna novedad, <strong>es obligatorio unirse a nuestro grupo oficial.</strong>
             </p>
-            <a 
-              href="https://t.me/cursoABRAESVENEZUELA" 
-              target="_blank" 
+            <a
+              href="https://t.me/cursoABRAESVENEZUELA"
+              target="_blank"
               rel="noopener noreferrer"
               onClick={() => setShowSuccessModal(false)}
               style={{
@@ -384,7 +384,8 @@ export default function CursoInscripcion() {
         </div>
       )}
 
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .form-column {
           background-color: var(--background);
         }
