@@ -13,6 +13,20 @@ export async function POST(request) {
       )
     }
 
+    // Validar que cédula y teléfono sean solo numéricos
+    if (!/^\d+$/.test(data.cedula)) {
+      return NextResponse.json(
+        { error: 'La cédula debe contener solo números.' },
+        { status: 400 }
+      )
+    }
+    if (data.telefono && !/^\d+$/.test(data.telefono)) {
+      return NextResponse.json(
+        { error: 'El número de contacto debe contener solo números.' },
+        { status: 400 }
+      )
+    }
+
     const nuevoRegistro = await prisma.inscripcionCurso.create({
       data: {
         nombre: data.nombre,

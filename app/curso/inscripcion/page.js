@@ -110,6 +110,13 @@ export default function CursoInscripcion() {
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value })
 
+  // Solo permite dígitos en campos numéricos
+  const handleNumericInput = (e) => {
+    const { name, value } = e.target
+    const soloNumeros = value.replace(/\D/g, '')
+    setFormData({ ...formData, [name]: soloNumeros })
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
@@ -200,7 +207,17 @@ export default function CursoInscripcion() {
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <div style={{ flex: '1 1 30%' }}>
                   <label>Cédula de Identidad</label>
-                  <input name="cedula" value={formData.cedula} onChange={handleChange} required />
+                  <input
+                    name="cedula"
+                    value={formData.cedula}
+                    onChange={handleNumericInput}
+                    inputMode="numeric"
+                    pattern="[0-9]+"
+                    maxLength={9}
+                    placeholder="Ej: 28490385"
+                    title="Solo números, sin puntos ni letras"
+                    required
+                  />
                 </div>
                 <div style={{ flex: '1 1 30%' }}>
                   <label>Género</label>
@@ -226,7 +243,17 @@ export default function CursoInscripcion() {
 
               <div>
                 <label>Número de Contacto</label>
-                <input name="telefono" value={formData.telefono} onChange={handleChange} required />
+                <input
+                  name="telefono"
+                  value={formData.telefono}
+                  onChange={handleNumericInput}
+                  inputMode="numeric"
+                  pattern="[0-9]+"
+                  maxLength={11}
+                  placeholder="Ej: 04121234567"
+                  title="Solo números, sin guiones ni espacios (11 dígitos)"
+                  required
+                />
               </div>
               <div>
                 <label>Correo Electrónico</label>
