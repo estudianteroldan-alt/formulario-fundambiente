@@ -214,7 +214,7 @@ export default function CursoInscripcion() {
                     inputMode="numeric"
                     pattern="[0-9]+"
                     maxLength={9}
-                    placeholder="Ej: 28490385"
+                    placeholder="Ej: 11586995"
                     title="Solo números, sin puntos ni letras"
                     required
                   />
