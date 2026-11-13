@@ -4,7 +4,7 @@ import { prisma } from '@/lib/prisma'
 export async function POST(request) {
   try {
     const data = await request.json()
-    
+
     // Server-side validation
     if (!data.nombre || !data.apellido || !data.cedula || !data.email) {
       return NextResponse.json(
