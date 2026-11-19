@@ -178,19 +178,62 @@ export default function CursoInscripcion() {
             </div>
           </div>
 
-          <div className="glass-panel" style={{ padding: '2.5rem' }}>
-            {message && !showSuccessModal && (
-              <div style={{
-                padding: '1.5rem',
-                backgroundColor: 'rgba(249, 129, 13, 0.2)',
-                borderRadius: '12px',
-                marginBottom: '1.5rem',
-                textAlign: 'center',
-                fontWeight: 'bold'
-              }}>
-                {message}
-              </div>
-            )}
+          {/* ── INSCRIPCIONES CERRADAS ── */}
+          <div className="glass-panel" style={{ padding: '2.5rem', textAlign: 'center' }}>
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+              width: '72px', height: '72px', borderRadius: '50%',
+              backgroundColor: 'rgba(220, 53, 69, 0.12)',
+              marginBottom: '1.2rem'
+            }}>
+              <span style={{ fontSize: '2.2rem' }}>🔒</span>
+            </div>
+
+            <h2 style={{ color: '#c0392b', marginBottom: '0.6rem', fontSize: '1.5rem' }}>
+              Inscripciones cerradas
+            </h2>
+
+            <p style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '1.4rem', opacity: 0.85 }}>
+              El período de inscripción para la <strong>2da Cohorte</strong> del curso
+              <em> "Reconocimiento, registro y manejo sostenible de bambú en ABRAEs de Venezuela"</em> ha finalizado.
+            </p>
+
+            <div style={{
+              padding: '1rem 1.4rem',
+              backgroundColor: 'rgba(0, 128, 76, 0.08)',
+              borderRadius: '10px',
+              borderLeft: '4px solid var(--primary)',
+              textAlign: 'left',
+              marginBottom: '1.4rem',
+              fontSize: '0.9rem',
+              lineHeight: '1.6'
+            }}>
+              <p style={{ margin: 0 }}>
+                📅 El curso está en desarrollo desde el <strong>18 de noviembre de 2026</strong> hasta el <strong>13 de enero de 2027</strong>.<br />
+                Si ya te inscribiste, mantente pendiente de las novedades a través del grupo oficial de Telegram.
+              </p>
+            </div>
+
+            <a
+              href="https://t.me/cursoABRAESVENEZUELA"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block', backgroundColor: '#0088cc', color: 'white',
+                padding: '14px 28px', borderRadius: '30px', fontWeight: 'bold',
+                textDecoration: 'none', fontSize: '1rem',
+                boxShadow: '0 4px 15px rgba(0, 136, 204, 0.35)'
+              }}
+            >
+              Grupo de Telegram ✈️
+            </a>
+
+            <p style={{ marginTop: '1.4rem', fontSize: '0.8rem', opacity: 0.6 }}>
+              ¿Tienes preguntas? Contáctanos a través del grupo de Telegram.
+            </p>
+
+            {/* Formulario oculto — no se renderiza */}
+            {false && (
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
               <div style={{ display: 'flex', gap: '1rem' }}>
@@ -302,6 +345,7 @@ export default function CursoInscripcion() {
                 {loading ? 'Enviando...' : 'Enviar Inscripción'}
               </button>
             </form>
+            )}
           </div>
 
           <ScheduleBox className="mobile-schedule" />
